@@ -9,16 +9,17 @@
     font-family: 'Comic Sans MS', 'Arial', sans-serif; 
 }
 
+/* El uso de 100dvh evita que el menú se esconda tras las barras del celular */
 body, html {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     overflow: hidden;
     background-color: #ffffff;
 }
 
 .contenedor-layout-horizontal {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex; 
     flex-direction: column; 
     align-items: center;
@@ -28,12 +29,13 @@ body, html {
     padding: 2vh 0;
 }
 
+/* VIDEO INTRO */
 #intro-video-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     background-color: #ffffff; 
     z-index: 100; 
     display: flex;
@@ -44,16 +46,66 @@ body, html {
 
 #intro-video-container video {
     width: auto;            
-    height: 90vh; 
+    height: 90dvh; 
     max-width: 100vw;      
     object-fit: contain;  
 }
 
+/* PANTALLA INTERMEDIA DEL CARNET */
+#carnet-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #ffffff; 
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+
+.bloque-carnet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.imagen-carnet {
+    height: 70dvh;
+    width: auto;
+    max-width: 90vw;
+    object-fit: contain;
+    display: block;
+}
+
+.btn-entrar-sitio {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.btn-entrar-sitio:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMACIÓN DE SALIDA */
 .desvanecer {
     opacity: 0;
     pointer-events: none; 
 }
 
+/* CABECERA SUPERIOR */
 .cabecera-fija-horizontal {
     width: 100%;
     display: flex;
@@ -67,6 +119,7 @@ body, html {
     display: block;
 }
 
+/* ZONA CENTRAL */
 .zona-contenido-pestaña {
     flex: 1; 
     width: 100%;
@@ -78,7 +131,7 @@ body, html {
 .contenedor-redes-interactivo {
     position: relative;
     width: auto;     
-    height: 72vh; 
+    height: 68dvh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,10 +165,11 @@ body, html {
     border-radius: 30px; 
 }
 
-.pestaña-contenido.oculto {
+.pestaña-contenido.oculto, #carnet-container.oculto {
     display: none !important;
 }
 
+/* MENÚ INTERACTIVO INFERIOR */
 .barra-superior-contenedor {
     position: relative;     
     width: 85vw; 
@@ -123,6 +177,7 @@ body, html {
     height: auto;
     display: flex;
     justify-content: center;
+    margin-bottom: 1vh; /* Separa el menú del borde físico de los móviles modernos */
 }
 
 .imagen-barra-superior {
@@ -155,13 +210,21 @@ body, html {
     cursor: pointer;
 }
 
+/* RESPONSIVE MÓVIL REFORZADO */
 @media (max-width: 600px) {
+    .contenedor-layout-horizontal {
+        padding: 1vh 0;
+    }
     .contenedor-redes-interactivo {
         width: 94vw !important;
         height: auto;
     }
     .imagen-redes-base {
         width: 100% !important;
+        height: auto;
+    }
+    .imagen-carnet {
+        width: 90vw;
         height: auto;
     }
     .barra-azul-superior, .barra-superior-contenedor {
