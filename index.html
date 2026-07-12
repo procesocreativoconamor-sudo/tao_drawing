@@ -32,50 +32,47 @@
         <!-- CONTENEDOR CENTRAL DINÁMICO (ZONA DE PESTAÑAS) -->
         <div class="zona-contenido-pestana">
 
-            <!-- PESTAÑA 1: REDES (Grande y calibrada) -->
-            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido" style="width: 82vw !important; max-width: 850px !important; height: auto !important; display: flex; justify-content: center; align-items: center; position: relative;">
+            <!-- PESTAÑA 1: REDES (Zonas de clic ampliadas drásticamente para no fallar) -->
+            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido" style="width: 85vw !important; max-width: 850px !important; height: auto !important; display: flex; justify-content: center; align-items: center; position: relative;">
                 <img src="images/hoja-redes-botones.png" alt="Redes Tao" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
                 
-                <!-- Capa interactiva sobre los botones blancos (sin color de fondo) -->
-                <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 62.5%; height: 50%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
-                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
-                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
-                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
+                <!-- Capa interactiva: Ahora ocupa el 78% de ancho y el 58% de alto para dar un margen gigante al pulsar -->
+                <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46%); width: 78%; height: 58%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
+                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 28%; cursor: pointer; border-radius: 30px;"></a>
+                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 28%; cursor: pointer; border-radius: 30px;"></a>
+                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 28%; cursor: pointer; border-radius: 30px;"></a>
                 </div>
             </div>
 
-            <!-- PESTAÑA 2: PROXIMAMENTE 1 -->
+            <!-- PESTAÑA 2: PROXIMAMENTE 1 (Texto eliminado, solo ilustración) -->
             <div id="contenido-proximamente1" class="pestaña-contenido oculto">
                 <div style="text-align: center;">
-                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
-                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 1</p>
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 85vw; max-height: 58vh; object-fit: contain;">
                 </div>
             </div>
 
-            <!-- PESTAÑA 3: PROXIMAMENTE 2 -->
+            <!-- PESTAÑA 3: PROXIMAMENTE 2 (Texto eliminado, solo ilustración) -->
             <div id="contenido-proximamente2" class="pestaña-contenido oculto">
                 <div style="text-align: center;">
-                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
-                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 2</p>
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 85vw; max-height: 58vh; object-fit: contain;">
                 </div>
             </div>
 
-            <!-- PESTAÑA 4: PROXIMAMENTE 3 -->
+            <!-- PESTAÑA 4: PROXIMAMENTE 3 (Texto eliminado, solo ilustración) -->
             <div id="contenido-proximamente3" class="pestaña-contenido oculto">
                 <div style="text-align: center;">
-                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
-                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 3</p>
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 85vw; max-height: 58vh; object-fit: contain;">
                 </div>
             </div>
 
             <!-- PESTAÑA 5: LUPA -->
             <div id="contenido-lupa" class="pestaña-contenido oculto">
-                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; text-align: center;">Zona de Búsqueda / Lupa</p>
+                <!-- Espacio listo si pones algo para la búsqueda en el futuro -->
             </div>
 
         </div>
 
-        <!-- MENÚ INTERACTIVO INFERIOR (Cambia dinámicamente mediante JS) -->
+        <!-- MENÚ INTERACTIVO INFERIOR -->
         <div class="barra-superior-contenedor">
             <img id="imagen-menu-dinamica" src="images/menu-redes.png" class="imagen-barra-superior" alt="Barra de Navegación">
             <div class="capa-botones-horizontales">
