@@ -17,8 +17,9 @@
     </div>
 
     <!-- 2. PANTALLA INTERMEDIA: EL CARNET -->
-    <div id="carnet-container" class="oculto">
-        <div class="bloque-carnet" onclick="entrarAlSitio()">
+    <!-- Quitamos la clase 'oculto' inicial para manejarlo de forma limpia desde JS o CSS -->
+    <div id="carnet-container" onclick="entrarAlSitio()">
+        <div class="bloque-carnet">
             <img src="images/carnet.png" alt="Carnet Tao" class="imagen-carnet">
             <button class="btn-entrar-sitio">Entrar a la web →</button>
         </div>
