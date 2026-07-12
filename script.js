@@ -5,38 +5,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (video) {
         video.play().catch(error => {
-            console.log("La reproducción automática está bloqueada. Esperando click del usuario.");
+            console.log("La reproducción automática está bloqueada. Esperando interacción o forzando salto.");
+            eliminarIntroYMostrarCarnet();
         });
 
-        // Cuando la animación del video termine, pasamos al Carnet .png
+        // En cuanto termine el video, mostramos el carnet
         video.addEventListener("ended", function () {
-            if (introContainer) {
-                introContainer.classList.add("desvanecer");
-                setTimeout(() => {
-                    introContainer.style.display = "none";
-                    // Hacemos visible el carnet
-                    if (carnetContainer) {
-                        carnetContainer.classList.remove("oculto");
-                    }
-                }, 800); 
-            }
+            eliminarIntroYMostrarCarnet();
         });
+
+        // Si hacen click en la intro, avanza directo al carnet sin esperar
+        introContainer.addEventListener("click", function() {
+            eliminarIntroYMostrarCarnet();
+        });
+    } else {
+        if (carnetContainer) carnetContainer.classList.remove("oculto");
+    }
+
+    function eliminarIntroYMostrarCarnet() {
+        if (introContainer) {
+            introContainer.style.opacity = "0";
+            setTimeout(() => {
+                introContainer.classList.add("oculto"); 
+                if (carnetContainer) {
+                    carnetContainer.classList.remove("oculto");
+                }
+            }, 500); 
+        }
     }
 });
 
 /**
- * Función que quita el Carnet con una transición suave al pulsar el botón o la imagen
+ * Función que quita el Carnet para ver el sitio web principal
  */
 function entrarAlSitio() {
     const carnetContainer = document.getElementById("carnet-container");
     if (carnetContainer) {
-        carnetContainer.classList.add("desvanecer");
+        carnetContainer.style.opacity = "0";
         setTimeout(() => {
-            carnetContainer.style.display = "none";
-        }, 800);
+            carnetContainer.classList.add("oculto");
+        }, 500);
     }
 }
 
+/**
+ * Control del menú inferior interactivo
+ */
 function cambiarPestana(idPestana) {
     console.log("Cambiando a pestaña: " + idPestana);
 
