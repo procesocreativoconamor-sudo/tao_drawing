@@ -3,48 +3,50 @@ document.addEventListener("DOMContentLoaded", function () {
     const introContainer = document.getElementById("intro-video-container");
     const carnetContainer = document.getElementById("carnet-container");
 
-    if (video) {
-        video.play().catch(error => {
-            console.log("La reproducción automática está bloqueada. Esperando interacción o forzando salto.");
-            eliminarIntroYMostrarCarnet();
-        });
-
-        // En cuanto termine el video, mostramos el carnet
-        video.addEventListener("ended", function () {
-            eliminarIntroYMostrarCarnet();
-        });
-
-        // Si hacen click en la intro, avanza directo al carnet sin esperar
-        introContainer.addEventListener("click", function() {
-            eliminarIntroYMostrarCarnet();
-        });
-    } else {
-        if (carnetContainer) carnetContainer.classList.remove("oculto");
+    // Aseguramos que el carnet inicie visible esperando los clicks si el video falla
+    if (carnetContainer) {
+        carnetContainer.classList.remove("oculto");
     }
 
-    function eliminarIntroYMostrarCarnet() {
+    if (video) {
+        video.play().catch(error => {
+            console.log("Auto-play bloqueado por el navegador. Saltando intro.");
+            eliminarIntro();
+        });
+
+        // Al acabar el video quitamos la capa intro
+        video.addEventListener("ended", function () {
+            eliminarIntro();
+        });
+
+        // Si el usuario hace clic sobre el video, también avanza al carnet
+        introContainer.addEventListener("click", function() {
+            eliminarIntro();
+        });
+    } else {
+        eliminarIntro();
+    }
+
+    function eliminarIntro() {
         if (introContainer) {
-            introContainer.style.opacity = "0";
+            introContainer.classList.add("invisible");
             setTimeout(() => {
-                introContainer.classList.add("oculto"); 
-                if (carnetContainer) {
-                    carnetContainer.classList.remove("oculto");
-                }
-            }, 500); 
+                introContainer.classList.add("oculto");
+            }, 400);
         }
     }
 });
 
 /**
- * Función que quita el Carnet para ver el sitio web principal
+ * Función definitiva para ocultar el Carnet al pulsar en cualquier lado de este
  */
 function entrarAlSitio() {
     const carnetContainer = document.getElementById("carnet-container");
     if (carnetContainer) {
-        carnetContainer.style.opacity = "0";
+        carnetContainer.classList.add("invisible");
         setTimeout(() => {
             carnetContainer.classList.add("oculto");
-        }, 500);
+        }, 400);
     }
 }
 
