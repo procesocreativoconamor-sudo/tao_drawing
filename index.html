@@ -13,12 +13,12 @@
         <video src="videos/intro.mp4" autoplay muted playsinline></video>
     </div>
 
-    <!-- 2. PANTALLA CARNET (Con ID correcto para que el script lo oculte) -->
+    <!-- 2. PANTALLA CARNET (Con función de clic directa que fuerza la entrada) -->
     <div id="carnet-container">
         <div class="bloque-carnet">
             <img src="images/carnet.png" class="imagen-carnet">
-            <!-- Añadido id="btn-entrar" para activar el clic del JavaScript -->
-            <button id="btn-entrar" class="btn-entrar-sitio">Entrar</button>
+            <!-- Este botón ahora oculta el carnet y muestra las redes al instante sin fallar -->
+            <button id="btn-entrar" class="btn-entrar-sitio" onclick="document.getElementById('carnet-container').style.display='none'; document.getElementById('pantalla-principal').classList.remove('oculto');">Entrar</button>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
             
             <img src="images/hoja-redes-botones.png" alt="Redes" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
             
-            <!-- CAPA DE ENLACES: Perfectamente calibrada para las cápsulas blancas -->
+            <!-- CAPA DE ENLACES: Perfectamente ajustada sobre tus botones blancos -->
             <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 62.5%; height: 50%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
                 
                 <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
