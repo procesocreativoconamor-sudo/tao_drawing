@@ -8,27 +8,33 @@
 </head>
 <body>
 
+    <!-- 1. VIDEO INTRODUCCIÓN -->
     <div id="intro-video-container">
         <video src="videos/intro.mp4" autoplay muted playsinline></video>
     </div>
 
+    <!-- 2. PANTALLA CARNET (Con ID correcto para que el script lo oculte) -->
     <div id="carnet-container">
         <div class="bloque-carnet">
             <img src="images/carnet.png" class="imagen-carnet">
-            <button class="btn-entrar-sitio">Entrar</button>
+            <!-- Añadido id="btn-entrar" para activar el clic del JavaScript -->
+            <button id="btn-entrar" class="btn-entrar-sitio">Entrar</button>
         </div>
     </div>
 
+    <!-- 3. PANTALLA PRINCIPAL -->
     <div id="pantalla-principal" class="oculto">
         
         <div class="cabecera-fija-horizontal">
             <img src="images/cabecera.png" class="barra-azul-superior">
         </div>
 
+        <!-- ZONA CENTRAL DE REDES (Tamaño grande garantizado) -->
         <div id="contenido-redes" class="contenedor-redes-interactivo" style="width: 82vw !important; max-width: 850px !important; height: auto !important; margin: 1vh 0; display: flex; justify-content: center; align-items: center;">
             
             <img src="images/hoja-redes-botones.png" alt="Redes" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
             
+            <!-- CAPA DE ENLACES: Perfectamente calibrada para las cápsulas blancas -->
             <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 62.5%; height: 50%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
                 
                 <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
@@ -38,6 +44,7 @@
             </div>
         </div>
 
+        <!-- MENÚ INFERIOR -->
         <div class="barra-superior-contenedor">
             <img src="images/barra-inferior.png" class="imagen-barra-superior">
             <div class="capa-botones-horizontales">
