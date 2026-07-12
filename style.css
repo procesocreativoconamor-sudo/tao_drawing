@@ -146,31 +146,31 @@ body, html {
     display: block;
 }
 
-/* CAPA DE ENLACES: Ajustada para expandirse más sobre las cápsulas */
+/* NUEVA CAPA DE ENLACES: Ajustada milimétricamente al nuevo recorte */
 .capa-enlaces-redes {
     position: absolute;
     top: 50%;             
     left: 50%;            
-    transform: translate(-50%, -47%); 
-    width: 76%;          /* Más ancho para abarcar las píldoras a lo largo */
-    height: 64%;         /* Más alto para dar más margen vertical */
+    transform: translate(-50%, -46%); 
+    width: 78%;          /* Se expande hacia los lados al no tener tanto aire la imagen */
+    height: 76%;         /* Mayor porcentaje de altura interactiva aprovechando el recorte */
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* Reparte el espacio proporcionalmente */
+    justify-content: space-around; 
     z-index: 10;
 }
 
-/* BOTONES INVISIBLES MÁS GRANDES */
+/* BOTONES INVISIBLES AJUSTADOS */
 .link-red-invisible {
     display: block;
     width: 100%;
-    height: 55px;        /* Altura ampliada para que sea muy fácil clickar */
+    height: 62px;        /* Altura óptima para la nueva proporción en laptops */
     
-    /* 🔴 PROVISIONAL: Teñido rojo para que veas dónde se va a poder clickar */
+    /* 🔴 PROVISIONAL: Teñido rojo para verificar el nuevo encuadre */
     background: rgba(255, 0, 0, 0.25); 
     
     cursor: pointer;
-    border-radius: 35px; 
+    border-radius: 40px; 
 }
 
 /* Clases de control de visibilidad */
@@ -256,11 +256,11 @@ body, html {
         height: auto;
     }
     .capa-enlaces-redes {
-        width: 80%;
-        height: 60%;
-        transform: translate(-50%, -47%);
+        width: 76%;
+        height: 76%;
+        transform: translate(-50%, -46%);
     }
     .link-red-invisible {
-        height: 10vw;
+        height: 11vw;
     }
 }
