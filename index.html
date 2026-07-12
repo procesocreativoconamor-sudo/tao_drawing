@@ -3,78 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tao Drawing - Creación a Tope</title>
+    <title>Tao Drawing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. VIDEO INTRODUCTORIO -->
+    <!-- 1. VIDEO INTRODUCCIÓN -->
     <div id="intro-video-container">
-        <video id="intro-video" autoplay muted playsinline>
-            <source src="images/tu-animacion.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
-        </video>
+        <video src="videos/intro.mp4" autoplay muted playsinline></video>
     </div>
 
-    <!-- 2. PANTALLA INTERMEDIA: EL CARNET -->
-    <!-- Quitamos la clase 'oculto' inicial para manejarlo de forma limpia desde JS o CSS -->
-    <div id="carnet-container" onclick="entrarAlSitio()">
+    <!-- 2. PANTALLA CARNET -->
+    <div id="carnet-container">
         <div class="bloque-carnet">
-            <img src="images/carnet.png" alt="Carnet Tao" class="imagen-carnet">
-            <button class="btn-entrar-sitio">Entrar a la web →</button>
+            <img src="images/carnet.png" class="imagen-carnet">
+            <button class="btn-entrar-sitio">Entrar</button>
         </div>
     </div>
 
-    <!-- 3. PANTALLA PRINCIPAL (Sitio web real) -->
-    <div id="pantalla-principal">
+    <!-- 3. PANTALLA PRINCIPAL -->
+    <div id="pantalla-principal" class="oculto">
         
-        <!-- CABECERA SUPERIOR -->
-        <header class="cabecera-fija-horizontal">
-            <img src="images/barra-superior-logo.png" alt="Tao Drawing" class="barra-azul-superior">
-        </header>
+        <div class="cabecera-fija-horizontal">
+            <img src="images/cabecera.png" class="barra-azul-superior">
+        </div>
 
-        <!-- ZONA DE CONTENIDO CENTRAL (Secciones) -->
-        <main class="zona-contenido-pestana">
+        <!-- ZONA CENTRAL DE REDES (ESTILOS FORZADOS PARA QUE SE AGRANDE) -->
+        <div id="contenido-redes" class="contenedor-redes-interactivo" style="width: 82vw !important; max-width: 850px !important; height: auto !important; margin: 1vh 0; display: flex; justify-content: center; align-items: center;">
             
-            <!-- PESTAÑA REDES -->
-            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido">
-                <img src="images/hoja-redes-botones.png" alt="Redes Tao" class="imagen-redes-base">
+            <img src="images/hoja-redes-botones.png" alt="Redes" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
+            
+            <!-- CAPA DE ENLACES: Aquí están los botones grandes -->
+            <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 78%; height: 78%; display: flex; flex-direction: column; justify-content: space-around; z-index: 10;">
                 
-                <div class="capa-enlaces-redes">
-                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible"></a>
-                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible"></a>
-                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible"></a>
-                </div>
+                <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 18%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
+                <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 18%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
+                <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 18%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
+            
             </div>
+        </div>
 
-            <!-- PESTAÑA PRÓXIMAMENTE 1 -->
-            <div id="contenido-prox1" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
-            </div>
-
-            <!-- PESTAÑA PRÓXIMAMENTE 2 -->
-            <div id="contenido-prox2" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
-            </div>
-
-            <!-- PESTAÑA PRÓXIMAMENTE 3 -->
-            <div id="contenido-prox3" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
-            </div>
-
-        </main>
-
-        <!-- MENÚ INTERACTIVO INFERIOR -->
-        <footer class="barra-superior-contenedor">
-            <img src="images/menu-redes.png" alt="Menú" class="imagen-barra-superior">
+        <!-- MENÚ INFERIOR -->
+        <div class="barra-superior-contenedor">
+            <img src="images/barra-inferior.png" class="imagen-barra-superior">
             <div class="capa-botones-horizontales">
-                <button class="btn-horizontal-invisible" onclick="cambiarPestana('redes')"></button>
-                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox1')"></button>
-                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox2')"></button>
-                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox3')"></button>
-                <button class="btn-horizontal-lupa" onclick="buscar()"></button>
+                <button class="btn-horizontal-invisible"></button>
+                <button class="btn-horizontal-invisible"></button>
+                <button class="btn-horizontal-invisible"></button>
+                <button class="btn-horizontal-invisible"></button>
+                <button class="btn-horizontal-lupa"></button>
             </div>
-        </footer>
+        </div>
 
     </div>
 
