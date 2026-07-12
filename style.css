@@ -16,7 +16,7 @@ body, html {
     background-color: #ffffff;
 }
 
-/* Estructura del Sitio Web Principal */
+/* Estructura de la Pantalla Principal */
 #pantalla-principal {
     width: 100%;
     height: 100dvh;
@@ -31,7 +31,7 @@ body, html {
     z-index: 1;
 }
 
-/* VIDEO INTRODUCCIÓN */
+/* CONTENEDOR DEL VIDEO INTRODUCCIÓN */
 #intro-video-container {
     position: fixed;
     top: 0;
@@ -119,64 +119,17 @@ body, html {
     display: block;
 }
 
-/* ZONA CENTRAL - Totalmente estirada */
+/* ZONA CENTRAL DINÁMICA */
 .zona-contenido-pestana {
     flex: 1; 
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.5vh 0;
+    margin: 1vh 0;
 }
 
-/* CONTENEDOR DE REDES: ¡Aumentado al 80% del ancho de la pantalla! */
-.contenedor-redes-interactivo {
-    position: relative;
-    width: 80vw;         /* Subimos drásticamente para ocupar la laptop */
-    max-width: 850px;    /* Permitimos un ancho máximo mucho mayor */
-    height: auto; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* IMAGEN DE REDES: Forzada a ocupar todo el contenedor vertical y horizontalmente */
-.imagen-redes-base {
-    width: 100%;    
-    height: auto; 
-    max-height: 66dvh;   /* Máxima altura permitida para no colisionar con el menú */
-    object-fit: contain;
-    display: block;
-}
-
-/* CAPA DE ENLACES: Proporciones estables para el nuevo tamaño gigante */
-.capa-enlaces-redes {
-    position: absolute;
-    top: 50%;             
-    left: 50%;            
-    transform: translate(-50%, -46.5%); 
-    width: 77%;          
-    height: 75%;         
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; 
-    z-index: 10;
-}
-
-/* BOTONES INVISIBLES EN PORCENTAJE */
-.link-red-invisible {
-    display: block;
-    width: 100%;
-    height: 18%;         /* Crece de forma interactiva y proporcional con la imagen */
-    
-    /* 🔴 PROVISIONAL: Teñido rojo para que verifiques el encuadre */
-    background: rgba(255, 0, 0, 0.25); 
-    
-    cursor: pointer;
-    border-radius: 40px; 
-}
-
-/* Clases de control de visibilidad */
+/* Clases globales de utilidad */
 .oculto {
     display: none !important;
 }
@@ -238,15 +191,8 @@ body, html {
         width: 100%;
         height: auto;
     }
-    .contenedor-layout-horizontal {
-        padding: 1vh 0;
-    }
     .contenedor-redes-interactivo {
         width: 94vw !important;
-        height: auto;
-    }
-    .imagen-redes-base {
-        width: 100% !important;
         height: auto;
     }
     .imagen-carnet {
@@ -257,13 +203,5 @@ body, html {
     .barra-azul-superior {
         width: 95vw !important;
         height: auto;
-    }
-    .capa-enlaces-redes {
-        width: 76%;
-        height: 76%;
-        transform: translate(-50%, -46%);
-    }
-    .link-red-invisible {
-        height: 11vw;
     }
 }
