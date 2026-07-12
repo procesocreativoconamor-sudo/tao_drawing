@@ -1,85 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("intro-video");
-    const introContainer = document.getElementById("intro-video-container");
+    const videoContainer = document.getElementById("intro-video-container");
+    const video = videoContainer.querySelector("video");
     const carnetContainer = document.getElementById("carnet-container");
+    const btnEntrar = document.querySelector(".btn-entrar-sitio");
+    const pantallaPrincipal = document.getElementById("pantalla-principal");
+    const botonesMenu = document.querySelectorAll(".capa-botones-horizontales button");
+    const pestañas = document.querySelectorAll(".pestaña-contenido");
 
-    // Aseguramos que el carnet inicie visible esperando los clicks si el video falla
-    if (carnetContainer) {
-        carnetContainer.classList.remove("oculto");
-    }
-
+    // 1. Manejo del Video de Introducción
     if (video) {
-        video.play().catch(error => {
-            console.log("Auto-play bloqueado por el navegador. Saltando intro.");
-            eliminarIntro();
+        video.addEventListener("ended", () => {
+            videoContainer.classList.add("invisible");
+            carnetContainer.classList.remove("invisible");
         });
-
-        // Al acabar el video quitamos la capa intro
-        video.addEventListener("ended", function () {
-            eliminarIntro();
+        // Por si se queda colgado, clic en el video también avanza
+        videoContainer.addEventListener("click", () => {
+            videoContainer.classList.add("invisible");
+            carnetContainer.classList.remove("invisible");
         });
-
-        // Si el usuario hace clic sobre el video, también avanza al carnet
-        introContainer.addEventListener("click", function() {
-            eliminarIntro();
-        });
-    } else {
-        eliminarIntro();
     }
 
-    function eliminarIntro() {
-        if (introContainer) {
-            introContainer.classList.add("invisible");
-            setTimeout(() => {
-                introContainer.classList.add("oculto");
-            }, 400);
-        }
-    }
-});
-
-/**
- * Función definitiva para ocultar el Carnet al pulsar en cualquier lado de este
- */
-function entrarAlSitio() {
-    const carnetContainer = document.getElementById("carnet-container");
-    if (carnetContainer) {
-        carnetContainer.classList.add("invisible");
-        setTimeout(() => {
+    // 2. Transición del Carnet a la Pantalla Principal
+    if (btnEntrar) {
+        btnEntrar.addEventListener("click", () => {
             carnetContainer.classList.add("oculto");
-        }, 400);
+            pantallaPrincipal.classList.remove("oculto");
+        });
     }
-}
 
-/**
- * Control del menú inferior interactivo
- */
-function cambiarPestana(idPestana) {
-    console.log("Cambiando a pestaña: " + idPestana);
+    // 3. Sistema de Navegación por Pestañas del Menú Inferior
+    botonesMenu.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const targetId = boton.getAttribute("data-target");
 
-    const todasLasPestanas = document.querySelectorAll('.pestaña-contenido');
-    todasLasPestanas.forEach(pestana => {
-        pestana.classList.add('oculto');
+            if (targetId) {
+                // Ocultar todas las pestañas primero
+                pestañas.forEach(pestaña => {
+                    pestaña.classList.add("oculto");
+                });
+
+                // Mostrar la pestaña seleccionada
+                const pestañaActiva = document.getElementById(targetId);
+                if (pestañaActiva) {
+                    pestañaActiva.classList.remove("oculto");
+                }
+            }
+        });
     });
-
-    const pestañaActiva = document.getElementById('contenido-' + idPestana);
-    if (pestañaActiva) {
-        pestañaActiva.classList.remove('oculto');
-    }
-
-    const imagenMenu = document.querySelector('.imagen-barra-superior');
-    if (imagenMenu) {
-        if (idPestana === 'redes') {
-            imagenMenu.src = 'images/menu-redes.png';
-        } else if (idPestana === 'prox1') {
-            imagenMenu.src = 'images/menu-prox1.png';
-        } else if (idPestana === 'prox2') {
-            imagenMenu.src = 'images/menu-prox2.png';
-        } else if (idPestana === 'prox3') {
-            imagenMenu.src = 'images/menu-prox3.png';
-        }
-    }
-}
-
-function buscar() {
-    alert("¡Buscando en Tao Drawing!");
-}
+});
