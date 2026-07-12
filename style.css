@@ -9,6 +9,7 @@
     font-family: 'Comic Sans MS', 'Arial', sans-serif; 
 }
 
+/* Evitamos scroll lateral y aseguramos alto correcto de pantalla móvil */
 body, html {
     width: 100%;
     height: 100dvh;
@@ -16,7 +17,8 @@ body, html {
     background-color: #ffffff;
 }
 
-.contenedor-layout-horizontal {
+/* Estructura del Sitio Web Principal */
+#pantalla-principal {
     width: 100%;
     height: 100dvh;
     display: flex; 
@@ -26,9 +28,10 @@ body, html {
     background: url('images/fondo-pantalla2.jpeg') no-repeat center center;
     background-size: cover; 
     padding: 2vh 0;
+    z-index: 10;
 }
 
-/* VIDEO INTRO */
+/* VIDEO INTRODUCCIÓN */
 #intro-video-container {
     position: absolute;
     top: 0;
@@ -36,11 +39,11 @@ body, html {
     width: 100%;
     height: 100dvh;
     background-color: #ffffff; 
-    z-index: 50; /* Bajamos el z-index para que no bloquee los clicks */
+    z-index: 999; /* Máxima prioridad inicial */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.8s ease; 
+    transition: opacity 0.5s ease; 
 }
 
 #intro-video-container video {
@@ -58,11 +61,11 @@ body, html {
     width: 100%;
     height: 100dvh;
     background-color: #ffffff; 
-    z-index: 150; /* Subimos el z-index al máximo para asegurar que reciba todos los clicks */
+    z-index: 888; /* Se posiciona debajo del video pero encima de la web principal */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
 }
 
 .bloque-carnet {
@@ -76,7 +79,7 @@ body, html {
 .imagen-carnet {
     height: auto;
     width: auto;
-    max-height: 75dvh; /* Evita que se haga gigante en la laptop */
+    max-height: 70dvh; /* Evita que el carnet se desborde o se estire en monitores de laptop */
     max-width: 90vw;
     object-fit: contain;
     display: block;
@@ -100,12 +103,6 @@ body, html {
     transform: scale(1.05);
 }
 
-/* ANIMACIÓN DE SALIDA */
-.desvanecer {
-    opacity: 0;
-    pointer-events: none; 
-}
-
 /* CABECERA SUPERIOR */
 .cabecera-fija-horizontal {
     width: 100%;
@@ -121,7 +118,7 @@ body, html {
 }
 
 /* ZONA CENTRAL */
-.zona-contenido-pestaña {
+.zona-contenido-pestana {
     flex: 1; 
     width: 100%;
     display: flex;
@@ -166,7 +163,10 @@ body, html {
     border-radius: 30px; 
 }
 
-.pestaña-contenido.oculto, #carnet-container.oculto {
+/* Clases de control para Ocultar elementos */
+.pestaña-contenido.oculto, 
+#carnet-container.oculto, 
+#intro-video-container.oculto {
     display: none !important;
 }
 
