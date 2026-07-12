@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tao Drawing - Creación a Tope</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. VIDEO INTRO -->
+    <div id="intro-video-container">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="images/tu-animacion.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+
+    <!-- 2. PANTALLA PRINCIPAL -->
+    <div id="pantalla-principal" class="contenedor-layout-horizontal">
+        
+        <!-- CABECERA SUPERIOR -->
+        <header class="cabecera-fija-horizontal">
+            <img src="images/barra-superior-logo.png" alt="Tao Drawing" class="barra-azul-superior">
+        </header>
+
+        <!-- ZONA DE CONTENIDO CENTRAL -->
+        <main class="zona-contenido-pestaña">
+            
+            <!-- PESTAÑA REDES (PRINCIPAL) -->
+            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido">
+                <img src="images/hoja-redes-botones.png" alt="Redes Tao" class="imagen-redes-base">
+                
+                <div class="capa-enlaces-redes">
+                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible"></a>
+                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible"></a>
+                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible"></a>
+                </div>
+            </div>
+
+            <!-- PESTAÑA PRÓXIMAMENTE 1 -->
+            <div id="contenido-prox1" class="contenedor-redes-interactivo pestaña-contenido oculto">
+                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
+            </div>
+
+            <!-- PESTAÑA PRÓXIMAMENTE 2 -->
+            <div id="contenido-prox2" class="contenedor-redes-interactivo pestaña-contenido oculto">
+                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
+            </div>
+
+            <!-- PESTAÑA PRÓXIMAMENTE 3 -->
+            <div id="contenido-prox3" class="contenedor-redes-interactivo pestaña-contenido oculto">
+                <img src="images/construccion.png" alt="Construyendo" class="imagen-redes-base">
+            </div>
+
+        </main>
+
+        <!-- MENÚ INTERACTIVO INFERIOR -->
+        <footer class="barra-superior-contenedor">
+            <img src="images/menu-redes.png" alt="Menú" class="imagen-barra-superior">
+            <div class="capa-botones-horizontales">
+                <button class="btn-horizontal-invisible" onclick="cambiarPestana('redes')"></button>
+                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox1')"></button>
+                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox2')"></button>
+                <button class="btn-horizontal-invisible" onclick="cambiarPestana('prox3')"></button>
+                <button class="btn-horizontal-lupa" onclick="buscar()"></button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
