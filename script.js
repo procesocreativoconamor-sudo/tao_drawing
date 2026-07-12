@@ -1,22 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("intro-video");
     const introContainer = document.getElementById("intro-video-container");
+    const carnetContainer = document.getElementById("carnet-container");
 
     if (video) {
         video.play().catch(error => {
-            console.log("Reproducción automática esperando interacción.");
+            console.log("La reproducción automática está bloqueada. Esperando click del usuario.");
         });
 
+        // Cuando la animación del video termine, pasamos al Carnet .png
         video.addEventListener("ended", function () {
             if (introContainer) {
                 introContainer.classList.add("desvanecer");
                 setTimeout(() => {
                     introContainer.style.display = "none";
+                    // Hacemos visible el carnet
+                    if (carnetContainer) {
+                        carnetContainer.classList.remove("oculto");
+                    }
                 }, 800); 
             }
         });
     }
 });
+
+/**
+ * Función que quita el Carnet con una transición suave al pulsar el botón o la imagen
+ */
+function entrarAlSitio() {
+    const carnetContainer = document.getElementById("carnet-container");
+    if (carnetContainer) {
+        carnetContainer.classList.add("desvanecer");
+        setTimeout(() => {
+            carnetContainer.style.display = "none";
+        }, 800);
+    }
+}
 
 function cambiarPestana(idPestana) {
     console.log("Cambiando a pestaña: " + idPestana);
