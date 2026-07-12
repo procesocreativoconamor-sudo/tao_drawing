@@ -8,33 +8,35 @@
 </head>
 <body>
 
-    <!-- 1. VIDEO INTRODUCCIÓN -->
-    <div id="intro-video-container">
-        <video src="videos/intro.mp4" autoplay muted playsinline></video>
-    </div>
-
-    <!-- 2. PANTALLA CARNET (Con función de clic directa que fuerza la entrada) -->
-    <div id="carnet-container">
-        <div class="bloque-carnet">
-            <img src="images/carnet.png" class="imagen-carnet">
-            <!-- Este botón ahora oculta el carnet y muestra las redes al instante sin fallar -->
-            <button id="btn-entrar" class="btn-entrar-sitio" onclick="document.getElementById('carnet-container').style.display='none'; document.getElementById('pantalla-principal').classList.remove('oculto');">Entrar</button>
+    <!-- 1. PANTALLA CARNET (Estilos directos e infalibles) -->
+    <div id="carnet-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100dvh; background-color: #ffffff; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="bloque-carnet" style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 600px; padding: 20px;">
+            <img src="images/carnet.png" class="imagen-carnet" style="width: 100%; height: auto; max-height: 70dvh; object-fit: contain; display: block;">
+            
+            <!-- Al hacer clic, borramos el carnet y mostramos las redes garantizado -->
+            <button id="btn-entrar" class="btn-entrar-sitio" style="margin-top: 20px; padding: 12px 35px; font-size: 1.2rem; background-color: #3b82f6; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" 
+                onclick="
+                    document.getElementById('carnet-container').style.setProperty('display', 'none', 'important');
+                    document.getElementById('pantalla-principal').style.setProperty('display', 'flex', 'important');
+                ">
+                Entrar
+            </button>
         </div>
     </div>
 
-    <!-- 3. PANTALLA PRINCIPAL -->
-    <div id="pantalla-principal" class="oculto">
+    <!-- 2. PANTALLA PRINCIPAL (Grande y lista) -->
+    <div id="pantalla-principal" style="display: none; width: 100%; height: 100dvh; flex-direction: column; align-items: center; justify-content: space-between; padding: 1.5vh 0; position: relative;">
         
         <div class="cabecera-fija-horizontal">
             <img src="images/cabecera.png" class="barra-azul-superior">
         </div>
 
-        <!-- ZONA CENTRAL DE REDES (Tamaño grande garantizado) -->
-        <div id="contenido-redes" class="contenedor-redes-interactivo" style="width: 82vw !important; max-width: 850px !important; height: auto !important; margin: 1vh 0; display: flex; justify-content: center; align-items: center;">
+        <!-- ZONA CENTRAL DE REDES (Tamaño laptop maximizado) -->
+        <div id="contenido-redes" class="contenedor-redes-interactivo" style="width: 82vw !important; max-width: 850px !important; height: auto !important; margin: 1vh 0; display: flex; justify-content: center; align-items: center; position: relative;">
             
             <img src="images/hoja-redes-botones.png" alt="Redes" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
             
-            <!-- CAPA DE ENLACES: Perfectamente ajustada sobre tus botones blancos -->
+            <!-- CAPA DE ENLACES: Ajustados milimétricamente sobre tus botones blancos -->
             <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 62.5%; height: 50%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
                 
                 <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
@@ -58,6 +60,9 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <!-- Script desactivado temporalmente para que no interfiera con el botón en línea -->
+    <script>
+        console.log("Sistema forzado activo");
+    </script>
 </body>
 </html>
