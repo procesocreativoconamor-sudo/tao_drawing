@@ -10,7 +10,7 @@
 
     <!-- VIDEO INTRODUCCIÓN -->
     <div id="intro-video-container">
-        <video src="videos/intro.mp4" autoplay muted playsinline></video>
+        <video src="images/tu-animacion.mp4" autoplay muted playsinline></video>
     </div>
 
     <!-- PANTALLA INTERMEDIA DEL CARNET -->
@@ -26,55 +26,64 @@
         
         <!-- Cabecera Superior Fija -->
         <div class="cabecera-fija-horizontal">
-            <img src="images/cabecera.png" class="barra-azul-superior" alt="Cabecera Superior">
+            <img src="images/barra-superior-logo.png" class="barra-azul-superior" alt="Cabecera Superior">
         </div>
 
         <!-- CONTENEDOR CENTRAL DINÁMICO (ZONA DE PESTAÑAS) -->
         <div class="zona-contenido-pestana">
 
-            <!-- PESTAÑA 1: REDES (¡ESTA ES LA QUE SE AGRANDÓ!) -->
-            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido" style="width: 82vw !important; max-width: 850px !important; height: auto !important; display: flex; justify-content: center; align-items: center;">
+            <!-- PESTAÑA 1: REDES (Grande y calibrada) -->
+            <div id="contenido-redes" class="contenedor-redes-interactivo pestaña-contenido" style="width: 82vw !important; max-width: 850px !important; height: auto !important; display: flex; justify-content: center; align-items: center; position: relative;">
                 <img src="images/hoja-redes-botones.png" alt="Redes Tao" class="imagen-redes-base" style="width: 100% !important; height: auto !important; max-height: 68dvh !important; object-fit: contain !important; display: block;">
                 
-                <!-- Capa interactiva perfectamente calibrada sobre las cápsulas blancas -->
+                <!-- Capa interactiva sobre los botones blancos (sin color de fondo) -->
                 <div class="capa-enlaces-redes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46.5%); width: 62.5%; height: 50%; display: flex; flex-direction: column; justify-content: space-between; z-index: 10;">
-                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
-                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
-                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; background: rgba(255, 0, 0, 0.3); cursor: pointer; border-radius: 40px;"></a>
+                    <a href="https://www.tiktok.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
+                    <a href="https://www.youtube.com/@tao_drawing" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
+                    <a href="https://www.instagram.com/tao_drawing/" target="_blank" class="link-red-invisible" style="display: block; width: 100%; height: 26%; cursor: pointer; border-radius: 40px;"></a>
                 </div>
             </div>
 
             <!-- PESTAÑA 2: PROXIMAMENTE 1 -->
-            <div id="contenido-proximamente1" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold;">Contenido Próximamente 1</p>
+            <div id="contenido-proximamente1" class="pestaña-contenido oculto">
+                <div style="text-align: center;">
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
+                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 1</p>
+                </div>
             </div>
 
             <!-- PESTAÑA 3: PROXIMAMENTE 2 -->
-            <div id="contenido-proximamente2" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold;">Contenido Próximamente 2</p>
+            <div id="contenido-proximamente2" class="pestaña-contenido oculto">
+                <div style="text-align: center;">
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
+                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 2</p>
+                </div>
             </div>
 
             <!-- PESTAÑA 4: PROXIMAMENTE 3 -->
-            <div id="contenido-proximamente3" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold;">Contenido Próximamente 3</p>
+            <div id="contenido-proximamente3" class="pestaña-contenido oculto">
+                <div style="text-align: center;">
+                    <img src="images/construccion.png" alt="En construcción" style="max-width: 80vw; max-height: 50vh; object-fit: contain;">
+                    <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; margin-top: 15px;">Contenido Próximamente 3</p>
+                </div>
             </div>
 
-            <!-- PESTAÑA 5: LUPA / BUSCADOR -->
-            <div id="contenido-lupa" class="contenedor-redes-interactivo pestaña-contenido oculto">
-                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold;">Zona de Búsqueda / Lupa</p>
+            <!-- PESTAÑA 5: LUPA -->
+            <div id="contenido-lupa" class="pestaña-contenido oculto">
+                <p style="font-size: 1.5rem; color: var(--azul-oscuro); font-weight: bold; text-align: center;">Zona de Búsqueda / Lupa</p>
             </div>
 
         </div>
 
-        <!-- MENÚ INTERACTIVO INFERIOR (Tus 5 botones originales) -->
+        <!-- MENÚ INTERACTIVO INFERIOR (Cambia dinámicamente mediante JS) -->
         <div class="barra-superior-contenedor">
-            <img src="images/barra-inferior.png" class="imagen-barra-superior" alt="Barra de Navegación">
+            <img id="imagen-menu-dinamica" src="images/menu-redes.png" class="imagen-barra-superior" alt="Barra de Navegación">
             <div class="capa-botones-horizontales">
-                <button class="btn-horizontal-invisible" data-target="contenido-redes"></button>
-                <button class="btn-horizontal-invisible" data-target="contenido-proximamente1"></button>
-                <button class="btn-horizontal-invisible" data-target="contenido-proximamente2"></button>
-                <button class="btn-horizontal-invisible" data-target="contenido-proximamente3"></button>
-                <button class="btn-horizontal-lupa" data-target="contenido-lupa"></button>
+                <button class="btn-horizontal-invisible" data-target="contenido-redes" data-menu="images/menu-redes.png"></button>
+                <button class="btn-horizontal-invisible" data-target="contenido-proximamente1" data-menu="images/menu-prox1.png"></button>
+                <button class="btn-horizontal-invisible" data-target="contenido-proximamente2" data-menu="images/menu-prox2.png"></button>
+                <button class="btn-horizontal-invisible" data-target="contenido-proximamente3" data-menu="images/menu-prox3.png"></button>
+                <button class="btn-horizontal-lupa" data-target="contenido-lupa" data-menu="images/menu-redes.png"></button>
             </div>
         </div>
 
